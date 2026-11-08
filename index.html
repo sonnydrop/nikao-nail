@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKAO NAILS | Майстер манікюру Запоріжжя</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcf8f9;
+            --card-bg: #ffffff;
+            --accent-pink: #e8a5b8;
+            --accent-dark-pink: #d47a93;
+            --text-dark: #222222;
+            --text-muted: #777777;
+            --border-color: #f2e3e7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f7e6eb;
+            color: var(--accent-dark-pink);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto 15px;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            margin: 40px 0 25px;
+            text-align: center;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-pink);
+            margin: 8px auto 0;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .price-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(232, 165, 184, 0.08);
+        }
+
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--accent-dark-pink);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px dashed #f5e8ec;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--accent-dark-pink);
+            font-size: 1.05rem;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .map-section {
+            margin-top: 50px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(232, 165, 184, 0.08);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px 20px;
+            background: #fff0f4;
+            border-radius: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-dark-pink);
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(212, 122, 147, 0.3);
+        }
+
+        .btn-telegram {
+            background-color: #229ED9;
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(34, 158, 217, 0.2);
+        }
+
+        .price-img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 15px;
+            margin: 0 auto 15px;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="tag">Запоріжжя • Креативний майстер</span>
+        <h1>NIKAO NAILS</h1>
+        <p class="bio">2 роки у сфері • Треш дизайни це до мене 🖤</p>
+        <div class="location">
+            📍 просп. Соборний, 177
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Прайс послуг</h2>
+
+        <div class="price-grid">
+            
+            <!-- Манікюр -->
+            <div class="price-card">
+                <h3 class="category-title">Манікюр</h3>
+                <div class="price-item">
+                    <span class="item-name">Гігієнічний манікюр</span>
+                    <span class="item-price">300 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Комбінований манікюр</span>
+                    <span class="item-price">350 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Манікюр + гель-лак</span>
+                    <span class="item-price">600 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Покриття гель-лаком</span>
+                    <span class="item-price">400 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Зміцнення нігтів</span>
+                    <span class="item-price">150 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Френч</span>
+                    <span class="item-price">від 150 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Дизайн нігтів</span>
+                    <span class="item-price">від 40 грн/ніготь</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Ремонт одного нігтя</span>
+                    <span class="item-price">80 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Зняття перед покриттям</span>
+                    <span class="item-price">100 грн</span>
+                </div>
+            </div>
+
+            <!-- Нарощування нігтів -->
+            <div class="price-card" style="border: 2px solid var(--accent-pink);">
+                <h3 class="category-title" style="text-align: center;">Нарощування нігтів</h3>
+                
+                <img src="https://i.ibb.co/RpwhHnNt/IMG-5115.jpg" alt="Прайс нарощування нігтів" class="price-img">
+                
+                <div class="price-item">
+                    <span class="item-name">Довжина S</span>
+                    <span class="item-price">900 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Довжина M</span>
+                    <span class="item-price">1000 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Довжина L</span>
+                    <span class="item-price">1100 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Довжина XL</span>
+                    <span class="item-price">1200 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Довжина XXL</span>
+                    <span class="item-price">1400 грн</span>
+                </div>
+            </div>
+
+            <!-- Педикюр -->
+            <div class="price-card">
+                <h3 class="category-title">Педикюр</h3>
+                <div class="price-item">
+                    <span class="item-name">Гігієнічний педикюр</span>
+                    <span class="item-price">400 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Педикюр + гель-лак</span>
+                    <span class="item-price">600 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Покриття гель-лаком</span>
+                    <span class="item-price">350 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">SPA-догляд</span>
+                    <span class="item-price">200 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Обробка натоптишів</span>
+                    <span class="item-price">150 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Обробка тріщин</span>
+                    <span class="item-price">150 грн</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Дизайн нігтів</span>
+                    <span class="item-price">від 30 грн/ніготь</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Зняття перед покриттям</span>
+                    <span class="item-price">50 грн</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Google Maps -->
+        <div class="map-section">
+            <h2 class="section-title" style="margin: 0 0 15px;">Як нас знайти</h2>
+            <p style="text-align: center; color: var(--text-muted);">м. Запоріжжя, просп. Соборний, 177</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2677.2913508499257!2d35.12781877685984!3d47.85338097121334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc674251df170b%3A0xb3bd63953e5e4073!2z0L_RgNC-0YHQvy4g0KHQvtCx0L7RgNC90YvQuSwgMTc3LCDQl9Cw0L_QvtGA0L7QttGM0LUsINCX0LDQv9C-0YDQvtC20YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDY5MDAw!5e0!3m2!1suk!2sua!4v1700000000000!5m2!1suk!2sua" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem;">Обирай зручний спосіб запису</h2>
+            <div class="btn-group">
+                <a href="https://t.me/nikao_nails" class="btn btn-telegram" target="_blank">Написати в Telegram</a>
+                <a href="https://instagram.com" class="btn btn-primary" target="_blank">Записатися в Direct</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
